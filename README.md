@@ -21,7 +21,7 @@ This pipeline was developed as part of the following work:
 > Diffuse glioma classification with deep learning and explainability:
 > addressing challenges in histopathology image analysis. *Springer-Verlag
 > GmbH Germany, part of Springer Nature*.
-> [Link to paper]
+> [Link to paper](https://link.springer.com/article/10.1007/s00500-025-10932-1)
 
 The accompanying PDF is included in this repository as `paper.pdf`.
 
