@@ -19,16 +19,16 @@ This pipeline was developed as part of the following work:
 
 > Jahan, I., Al-Saady, R. M., Vranić, S., & Chowdhury, M. E. H. (2025).
 > Diffuse glioma classification with deep learning and explainability:
-> addressing challenges in histopathology image analysis. *Soft Computing*,
-> Springer.
-> [Link to paper](https://link.springer.com/article/10.1007/s00500-025-10932-1)
+> addressing challenges in histopathology image analysis. *Springer-Verlag
+> GmbH Germany, part of Springer Nature*.
+> [Link to paper]
 
 The accompanying PDF is included in this repository as `paper.pdf`.
 
 ## Pipeline Overview
 
 ```
-1. Data Split → 2/3. Normalization → 4. Augmentation → 5. Training & XAI
+1. Data Split → 2/3. Normalization & Blending → 4. Augmentation → 5. Training & XAI
 ```
 
 ## Files
@@ -37,7 +37,7 @@ The accompanying PDF is included in this repository as `paper.pdf`.
 |---|---|
 | `data_split.ipynb` | Stratified 5-fold train/validation/test split, preserving class balance |
 | `stain_normalization.ipynb` | Reinhard stain normalization using TIAToolbox |
-| `mixed_normalization.ipynb` | Blends Reinhard + Macenko normalized images via weighted combination |
+| `linear_blended_normalization.ipynb` | Blends Reinhard + Macenko normalized images via weighted linear combination |
 | `augmentation.ipynb` | Fixed-count image augmentation (rotation, zoom, flipping) using Augmentor |
 | `training_and_xai.ipynb` | Training/testing orchestration + explainability via Grad-CAM, Grad-CAM++, SmoothGrad-CAM++, Score-CAM |
 
