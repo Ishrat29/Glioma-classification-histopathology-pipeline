@@ -1,9 +1,9 @@
-# Histopathology Image Classification Pipeline
+# Glioma Classification — Histopathology Image Pipeline
 
-This repository contains a portion of an end-to-end deep learning pipeline for
-classifying histopathology whole-slide image (WSI) tiles, covering patch
-extraction, data splitting, stain normalization, augmentation, and model
-training/evaluation with explainability (XAI).
+This repository contains a deep learning pipeline for glioma classification
+from histopathology whole-slide image (WSI) tiles, covering data splitting,
+stain normalization, augmentation, and model training/evaluation with
+explainability (XAI).
 
 > **Note on scope:** This repository includes the data preparation,
 > preprocessing, and explainability components that I personally authored.
@@ -13,17 +13,28 @@ training/evaluation with explainability (XAI).
 > provided to show pipeline orchestration and the explainability (CAM-based)
 > workflow.
 
+## Related Publication
+
+This pipeline was developed as part of the following work:
+
+> Jahan, I., Al-Saady, R. M., Vranić, S., & Chowdhury, M. E. H. (2025).
+> Diffuse glioma classification with deep learning and explainability:
+> addressing challenges in histopathology image analysis. *Soft Computing*,
+> Springer.
+> [Link to paper](https://link.springer.com/article/10.1007/s00500-025-10932-1)
+
+The accompanying PDF is included in this repository as `paper.pdf`.
+
 ## Pipeline Overview
 
 ```
-1. Patch Extraction → 2. Data Split → 3/4. Normalization → 5. Augmentation → 6. Training & XAI
+1. Data Split → 2/3. Normalization → 4. Augmentation → 5. Training & XAI
 ```
 
 ## Files
 
 | File | Description |
 |---|---|
-| `patch_extraction.groovy` | QuPath script — extracts fixed-size tiles from whole-slide images based on annotated ROIs |
 | `data_split.ipynb` | Stratified 5-fold train/validation/test split, preserving class balance |
 | `stain_normalization.ipynb` | Reinhard stain normalization using TIAToolbox |
 | `mixed_normalization.ipynb` | Blends Reinhard + Macenko normalized images via weighted combination |
@@ -49,7 +60,7 @@ timm
 
 ## Usage
 
-Each notebook/script contains placeholder paths in the form `<PLACEHOLDER>`.
+Each notebook contains placeholder paths in the form `<PLACEHOLDER>`.
 Replace these with your own local paths before running. Files are numbered
 in pipeline order, though each stage can also be run independently if you
 already have the appropriate intermediate data.
